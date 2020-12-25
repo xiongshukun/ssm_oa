@@ -11,4 +11,7 @@ public interface INewsLabelDao {
     List<NewsLabel> selectCurrentPageNewsLabel(Page<NewsLabel> page);
 
     List<NewsLabel> selectAllParent();
+    
+    void deleteNewsLabel(Integer id);
+    
 }
