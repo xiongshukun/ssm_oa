@@ -29,5 +29,12 @@ public class NewsLabelHandler {
         model.addAttribute("parent",parent);
         return "/html/news/newsLabelManger.jsp";
     }
+   
+    @RequestMapping("/deleteNewsLabel")
+    public String deleteNewsLabel(Model model){
+        return null;
+    }
+
+
 
 }
