@@ -9,4 +9,6 @@ public interface INewsLabelService {
     Page<NewsLabel> findCurrentPage(int pagenum);
 
     List<NewsLabel> findAllParent();
+
+    void deleteNewsLabel(Integer id);
 }

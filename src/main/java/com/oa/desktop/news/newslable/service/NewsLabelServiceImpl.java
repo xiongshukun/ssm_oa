@@ -31,4 +31,9 @@ public class NewsLabelServiceImpl implements INewsLabelService{
     public List<NewsLabel> findAllParent() {
         return newsLabelDao.selectAllParent();
     }
+
+    @Override
+    public void deleteNewsLabel(Integer id) {
+        newsLabelDao.deleteNewsLabel(id);
+    }
 }
