@@ -25,5 +25,10 @@
     <select id="selectAllParent" resultType="NewsLabel">
         select id,label_name,label_content from newlabel where pid is null
     </select>
+    
+    <delete id="deleteNewsLabel">
+        delete from newlabel where id=${id}
+    </delete>
+
 
 </mapper>
