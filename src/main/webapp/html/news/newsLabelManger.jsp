@@ -120,7 +120,7 @@
                     <td class="td07">${data.label_name}</td>
                     <td class="td07">${data.parent.label_name == null?"无":data.parent.label_name}</td>
                     <td class="td07">${data.label_content}</td>
-                    <td class="td07"><a href="#" onClick="shanchu()">删除</a></td>
+                    <td class="td07"><a href="${pageContext.request.contextPath}/desktop/news/newslable/handler/NewsLabelHandler/deleteNewsLabel?id=${data.id}">删除</a></td>
                     <td class="td07"><a href="#" onClick="javascript:windowOpen('栏目修改.htm','','',670,260,'no','yes','100','100')">修改</a></td>
                 </tr>
             </c:forEach>
