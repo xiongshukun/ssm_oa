@@ -30,9 +30,4 @@ public class NewsLabelHandler {
         return "/html/news/newsLabelManger.jsp";
     }
 
-    @RequestMapping("/deleteNewsLabel")
-    public String deleteNewsLabel(Model model){
-        return null;
-    }
-
 }
