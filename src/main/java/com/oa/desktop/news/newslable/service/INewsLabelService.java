@@ -11,4 +11,8 @@ public interface INewsLabelService {
     List<NewsLabel> findAllParent();
 
     void deleteNewsLabel(Integer id);
+
+    void updateNewsLabel(NewsLabel newsLabel);
+
+    void insertNewsLabel(NewsLabel newsLabel);
 }

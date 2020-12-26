@@ -33,9 +33,19 @@ public class NewsLabelHandler {
     @RequestMapping("/deleteNewsLabel")
     public String deleteNewsLabel(Integer id){
         newsLabelService.deleteNewsLabel(id);
-        return "desktop/news/newslable/handler/NewsLabelHandler/queryNewsLabel";
+        return "desktop/news/queryNewsLabel";
     }
 
+    @RequestMapping("/updateNewsLabel")
+    public String updateNewsLabel(NewsLabel newsLabel){
+        newsLabelService.updateNewsLabel(newsLabel);
+        return null;
+    }
 
+    @RequestMapping("/insertNewsLabel")
+    public String insertNewsLabel(NewsLabel newsLabel){
+        newsLabelService.insertNewsLabel(newsLabel);
+        return null;
+    }
 
 }

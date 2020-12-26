@@ -27,8 +27,16 @@
     </select>
     
     <delete id="deleteNewsLabel">
-        delete from newlabel where id=${id}
+        delete from newlabel where id=#{id}
     </delete>
+
+    <update id="updateNewsLabel" parameterType="NewsLabel">
+        update newlabel set label_name=#{label_name},label_content=#{label_content}
+    </update>
+
+    <insert id="insertNewsLabel" parameterType="NewsLabel">
+        insert into newlabel (newlabel_name,newlabel_content) values(#{newlabel_name},#{newlabel_content})
+    </insert>
 
 
 </mapper>

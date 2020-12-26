@@ -13,5 +13,8 @@ public interface INewsLabelDao {
     List<NewsLabel> selectAllParent();
     
     void deleteNewsLabel(Integer id);
-    
+
+    void updateNewsLabel(NewsLabel newsLabel);
+
+    void insertNewsLabel(NewsLabel newsLabel);
 }

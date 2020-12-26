@@ -36,4 +36,14 @@ public class NewsLabelServiceImpl implements INewsLabelService{
     public void deleteNewsLabel(Integer id) {
         newsLabelDao.deleteNewsLabel(id);
     }
+
+    @Override
+    public void updateNewsLabel(NewsLabel newsLabel) {
+        newsLabelDao.updateNewsLabel(newsLabel);
+    }
+
+    @Override
+    public void insertNewsLabel(NewsLabel newsLabel) {
+        newsLabelDao.insertNewsLabel(newsLabel);
+    }
 }
