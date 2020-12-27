@@ -76,7 +76,7 @@
             <tr>
                 <td class="td_page" align="left">
                     <div align="right">
-                        <input name="Submit" type="submit" class="buttonface02" value="添加栏目" onClick="javascript:windowOpen('newsLabelInsert.jsp','','',700,300,'','','')">
+                        <input name="Submit" type="submit" class="buttonface02" value="添加栏目" onClick="javascript:windowOpen('${pageContext.request.contextPath}/desktop/news/insertNewsLabel','',700,300,'','','')">
                     </div></td>
             </tr>
         </table>
