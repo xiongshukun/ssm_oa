@@ -39,7 +39,7 @@ public class NewsLabelHandler {
     @RequestMapping("/updateNewsLabel")
     public String updateNewsLabel(NewsLabel newsLabel){
         newsLabelService.updateNewsLabel(newsLabel);
-        return null;
+        return "/html/news/newsLabelUpdate.jsp";
     }
 
     @RequestMapping("/insertNewsLabel")

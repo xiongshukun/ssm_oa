@@ -52,6 +52,7 @@
                     <option value="无">无</option>
                     <option value="体育新闻" selected>体育新闻</option>
                     <option value="娱乐新闻">娱乐新闻</option>
+                    <option value="时政新闻">时政新闻</option>
                     <option value="--请选择--">--请选择--</option>
                 </select></td>
             </tr>
@@ -67,11 +68,13 @@
             <tr>
                 <td class="td_page"><div align="center">
 
-                    <input name="Submit" type="submit" class="buttonface02" value="  修 改  " onClick="xiugai2()">
+<%--                    <input name="Submit" type="submit" class="buttonface02" value="  修 改  " onClick="xiugai2()">--%>
+                    <input name="Submit" type="submit" class="buttonface02" value="  修 改  " onClick="javascript:window.location.href='${pageContext.request.contextPath}/desktop/news/queryNewsLabel'">
                     &nbsp;&nbsp;
                     <input name="Submit" type="reset" class="buttonface02" value="  重 置  ">
                     &nbsp;
-                    <input name="Submit" type="submit" class="buttonface02" value="  关 闭  " onClick="window.close()">
+<%--                    <input name="Submit" type="submit" class="buttonface02" value="  关 闭  " onClick="window.close()">--%>
+                    <input name="Submit" type="submit" class="buttonface02" value="  关 闭  " onClick="javascript:window.location.href='${pageContext.request.contextPath}/desktop/news/queryNewsLabel'">
                 </div></td>
             </tr>
         </table>

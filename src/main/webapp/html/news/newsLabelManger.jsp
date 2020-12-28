@@ -121,7 +121,8 @@
                     <td class="td07">${data.parent.label_name == null?"无":data.parent.label_name}</td>
                     <td class="td07">${data.label_content}</td>
                     <td class="td07"><a href="${pageContext.request.contextPath}/desktop/news/deleteNewsLabel?id=${data.id}">删除</a></td>
-                    <td class="td07"><a href="#" onClick="javascript:windowOpen('/html/news/newsLabelUpdate.jsp','','',670,260,'no','yes','100','100')">修改</a></td>
+<%--                    <td class="td07"><a href="${pageContext.request.contextPath}/desktop/news/updateNewsLabel?id=${data.id}" onClick="javascript:windowOpen('${pageContext.request.contextPath}/desktop/news/updateNewsLabel','','',670,260,'no','yes','100','100')">修改</a></td>--%>
+                    <td class="td07"><a href="${pageContext.request.contextPath}/desktop/news/updateNewsLabel?id=${data.id}")>修改</a></td>
                 </tr>
             </c:forEach>
         </table>

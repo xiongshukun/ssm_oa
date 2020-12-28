@@ -31,11 +31,11 @@
     </delete>
 
     <update id="updateNewsLabel" parameterType="NewsLabel">
-        update newlabel set label_name=#{label_name},label_content=#{label_content}
+        update newlabel set label_name=#{label_name},label_content=#{label_content} where id=#{id}
     </update>
 
     <insert id="insertNewsLabel" parameterType="NewsLabel">
-        insert into newlabel (newlabel_name,newlabel_content) values(#{newlabel_name},#{newlabel_content})
+        insert into newlabel (label_name,label_content) values(#{label_name},#{label_content})
     </insert>
 
 
