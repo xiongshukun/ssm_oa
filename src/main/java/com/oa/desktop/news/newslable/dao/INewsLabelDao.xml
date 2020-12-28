@@ -38,5 +38,12 @@
         insert into newlabel (label_name,label_content) values(#{label_name},#{label_content})
     </insert>
 
+    <select id="FindAll" resultType="NewsLabel">
+        select id,label_name,label_content,pid from newlabel
+    </select>
+
+    <select id="FindUpdate" resultType="NewsLabel">
+        select id,label_name,label_content,pid from newlabel where id = #{id}
+    </select>
 
 </mapper>

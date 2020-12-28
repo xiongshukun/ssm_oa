@@ -7,6 +7,7 @@ public class NewsLabel {
     private Integer id;
     private String label_name;
     private String label_content;
+    private Integer pid;
     //关联属性：当前类作为一方
     private List<NewsLabel> children;
     //关联属性：当前类作为多方
@@ -15,10 +16,11 @@ public class NewsLabel {
     public NewsLabel() {
     }
 
-    public NewsLabel(Integer id, String label_name, String label_content, List<NewsLabel> children, NewsLabel parent) {
+    public NewsLabel(Integer id, String label_name, String label_content, Integer pid, List<NewsLabel> children, NewsLabel parent) {
         this.id = id;
         this.label_name = label_name;
         this.label_content = label_content;
+        this.pid = pid;
         this.children = children;
         this.parent = parent;
     }
@@ -47,6 +49,14 @@ public class NewsLabel {
         this.label_content = label_content;
     }
 
+    public Integer getPid() {
+        return pid;
+    }
+
+    public void setPid(Integer pid) {
+        this.pid = pid;
+    }
+
     public List<NewsLabel> getChildren() {
         return children;
     }
@@ -69,6 +79,7 @@ public class NewsLabel {
                 "id=" + id +
                 ", label_name='" + label_name + '\'' +
                 ", label_content='" + label_content + '\'' +
+                ", pid=" + pid +
                 ", children=" + children +
                 ", parent=" + parent +
                 '}';

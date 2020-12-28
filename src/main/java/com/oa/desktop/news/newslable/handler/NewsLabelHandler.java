@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
@@ -36,16 +37,39 @@ public class NewsLabelHandler {
         return "/desktop/news/queryNewsLabel";
     }
 
+    @RequestMapping("newsLabelUpdate")
+    public ModelAndView newsLabelUpdate(Integer id){
+        ModelAndView mv = new ModelAndView();
+        NewsLabel newsLabel = newsLabelService.FindUpdate(id);
+        mv.addObject("newsLabel",newsLabel);
+        mv.setViewName("/html/news/newsLabelUpdate.jsp");
+        List<NewsLabel> newsLabelList = newsLabelService.FindAll();
+        mv.addObject("newsLabelList",newsLabelList);
+        return mv;
+    }
+
     @RequestMapping("/updateNewsLabel")
     public String updateNewsLabel(NewsLabel newsLabel){
         newsLabelService.updateNewsLabel(newsLabel);
-        return "/html/news/newsLabelUpdate.jsp";
+        System.out.println(newsLabel);
+        return "redirect://desktop/news/queryNewsLabel";
+    }
+
+    @RequestMapping("/newsLabelInsert")
+    public ModelAndView newsLabelInsert(){
+        ModelAndView modelAndView = new ModelAndView();
+        List<NewsLabel> newsLabelList = newsLabelService.FindAll();
+        modelAndView.addObject("newsLabelList",newsLabelList);
+        modelAndView.setViewName("/html/news/newsLabelInsert.jsp");
+
+        return modelAndView;
     }
 
     @RequestMapping("/insertNewsLabel")
     public String insertNewsLabel(NewsLabel newsLabel){
         newsLabelService.insertNewsLabel(newsLabel);
-        return "/html/news/newsLabelInsert.jsp";
+        System.out.println(newsLabel);
+        return "redirect://desktop/news/queryNewsLabel";
     }
 
 }

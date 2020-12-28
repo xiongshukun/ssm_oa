@@ -17,4 +17,8 @@ public interface INewsLabelDao {
     void updateNewsLabel(NewsLabel newsLabel);
 
     void insertNewsLabel(NewsLabel newsLabel);
+
+    List<NewsLabel> FindAll();
+
+    NewsLabel FindUpdate();
 }

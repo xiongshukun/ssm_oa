@@ -76,7 +76,8 @@
             <tr>
                 <td class="td_page" align="left">
                     <div align="right">
-                        <input name="Submit" type="submit" class="buttonface02" value="添加栏目" onClick="javascript:windowOpen('${pageContext.request.contextPath}/desktop/news/insertNewsLabel','',700,300,'','','')">
+                        <a href="${pageContext.request.contextPath}/desktop/news/newsLabelInsert" class="buttonface02" name="Submit">添加栏目</a>
+<%--                        <input name="Submit" type="submit" class="buttonface02" value="添加栏目" onClick="javascript:windowOpen('${pageContext.request.contextPath}/desktop/news/insertNewsLabel','',700,300,'','','')">--%>
                     </div></td>
             </tr>
         </table>
@@ -122,7 +123,7 @@
                     <td class="td07">${data.label_content}</td>
                     <td class="td07"><a href="${pageContext.request.contextPath}/desktop/news/deleteNewsLabel?id=${data.id}">删除</a></td>
 <%--                    <td class="td07"><a href="${pageContext.request.contextPath}/desktop/news/updateNewsLabel?id=${data.id}" onClick="javascript:windowOpen('${pageContext.request.contextPath}/desktop/news/updateNewsLabel','','',670,260,'no','yes','100','100')">修改</a></td>--%>
-                    <td class="td07"><a href="${pageContext.request.contextPath}/desktop/news/updateNewsLabel?id=${data.id}")>修改</a></td>
+                    <td class="td07"><a href="${pageContext.request.contextPath}/desktop/news/newsLabelUpdate?id=${data.id}")>修改</a></td>
                 </tr>
             </c:forEach>
         </table>

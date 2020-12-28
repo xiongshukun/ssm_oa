@@ -46,4 +46,14 @@ public class NewsLabelServiceImpl implements INewsLabelService{
     public void insertNewsLabel(NewsLabel newsLabel) {
         newsLabelDao.insertNewsLabel(newsLabel);
     }
+
+    @Override
+    public List<NewsLabel> FindAll() {
+        return newsLabelDao.FindAll();
+    }
+
+    @Override
+    public NewsLabel FindUpdate(Integer id) {
+        return newsLabelDao.FindUpdate();
+    }
 }
