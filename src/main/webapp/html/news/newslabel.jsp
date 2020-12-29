@@ -1,5 +1,12 @@
-<%@ page contentType="text/html;charset=UTF-8" language ="java"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%--
+  Created by IntelliJ IDEA.
+  User: Administrator
+  Date: 2020/12/18 0018
+  Time: 22:54
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -19,11 +26,12 @@
                 alert("取消删除！");
             }
         }
-        function select(value) {
+        function Select(value) {
+            console.log(value);
             var id = value;
-            var ge = document.getElementById("mySelect");
-            console.log(ge)
-            alert("即将查询"+ge.options[ge.selectedIndex].innerText);
+            var lab = document.getElementById("Select");
+            console.log(lab);
+            alert("查询" + lab.options[lab.selectedIndex].innerText);
             window.location.href="${pageContext.request.contextPath}/desktop/news/find?id="+id;
         }
     </script>
@@ -50,12 +58,13 @@
             <tr>
                 <td width="14%" class="td_02">栏目名称</td>
                 <td width="86%" class="td_02">
-                    <select id="mySelect" name="label_name" class="input" style="width:99% " onchange="select(this.value)">
+                    <select class="input" style="width:99% " id="Select" name="label_name" onchange="Select(this.value)">
                         <option value="0" selected>--请选择--</option>
                         <c:forEach items="${parent}" var="item">
                             <option value="${item.id}">${item.label_name}</option>
                         </c:forEach>
                     </select>
+                    <input name="Submit" type="button" class="buttonface02" value="  返回  " onClick="window.location.href='${pageContext.request.contextPath}/desktop/news/queryNewsLabel'">
                 </td>
             </tr>
         </table>
@@ -65,7 +74,6 @@
                 <td class="td_page" align="left">
                     <div align="right">
                         <a href="${pageContext.request.contextPath}/desktop/news/newsLabelInsert" class="buttonface02" name="Submit">添加栏目</a>
-<%--                        <input name="Submit" type="submit" class="buttonface02" value="添加栏目" onClick="javascript:windowOpen('${pageContext.request.contextPath}/desktop/news/insertNewsLabel','',700,300,'','','')">--%>
                     </div></td>
             </tr>
         </table>
@@ -93,9 +101,6 @@
                     </tr>
                 </c:otherwise>
             </c:choose>
-<%--            <tr>--%>
-<%--                <td colspan="5" align="right" class="td07"><img src="../../images/1.gif" width="4" height="5" align="absmiddle"> 首页　 <img src="../../images/2.gif" width="3" height="5" align="absmiddle"> 上一页　 <img src="../../images/2-2.gif" width="3" height="5" align="absmiddle"> 下一页　 <img src="../../images/3.gif" width="4" height="5" align="absmiddle"> 末页　　共 ${page.totalPages} 页 ${page.totalRows} 条记录</td>--%>
-<%--            </tr>--%>
             <tr>
                 <td width="17%" class="td_top">栏目名称</td>
                 <td width="15%" class="td_top">上级栏目名称</td>
@@ -110,7 +115,6 @@
                     <td class="td07">${data.parent.label_name == null?"无":data.parent.label_name}</td>
                     <td class="td07">${data.label_content}</td>
                     <td class="td07"><a href="${pageContext.request.contextPath}/desktop/news/deleteNewsLabel?id=${data.id}">删除</a></td>
-<%--                    <td class="td07"><a href="${pageContext.request.contextPath}/desktop/news/updateNewsLabel?id=${data.id}" onClick="javascript:windowOpen('${pageContext.request.contextPath}/desktop/news/updateNewsLabel','','',670,260,'no','yes','100','100')">修改</a></td>--%>
                     <td class="td07"><a href="${pageContext.request.contextPath}/desktop/news/newsLabelUpdate?id=${data.id}")>修改</a></td>
                 </tr>
             </c:forEach>

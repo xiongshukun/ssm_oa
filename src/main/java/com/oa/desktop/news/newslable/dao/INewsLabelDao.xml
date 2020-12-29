@@ -46,4 +46,26 @@
         select id,label_name,label_content,pid from newlabel where id = #{id}
     </select>
 
+    <select id="findCount" resultType="int">
+        select count(*) from newlabel where id = #{id} or pid = #{id}
+    </select>
+    
+    <select id="findNewsLabel" resultMap="newslabel">
+        select id,label_name,label_content,pid from newlabel
+        where id = #{id} or pid = #{id}
+        limit #{page.pageStartIndex},#{page.pageSize}
+    </select>
+    <resultMap id="newslabel" type="NewsLabel">
+        <id column="id" property="id"/>
+        <result column="label_name" property="label_name"/>
+        <result column="label_content" property="label_content"/>
+        <association property="parent"
+                     javaType="NewsLabel"
+                     select="selectNewsLabelParentId"
+                     column="pid"/>
+    </resultMap>
+    <select id="selectNewsLabelParentId" resultType="NewsLabel">
+        select id,label_name,label_content,pid from newlabel where id = #{id}
+    </select>
+
 </mapper>

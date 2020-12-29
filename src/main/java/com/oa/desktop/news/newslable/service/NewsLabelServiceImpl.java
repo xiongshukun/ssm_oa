@@ -57,4 +57,20 @@ public class NewsLabelServiceImpl implements INewsLabelService{
     public NewsLabel FindUpdate(Integer id) {
         return newsLabelDao.FindUpdate(id);
     }
+
+    @Override
+    public Page<NewsLabel> selectAllCurrentPage(int id, int pagenum) {
+        Page<NewsLabel> page = new Page<>();
+        page.setPagenum(pagenum);
+        int count = newsLabelDao.findCount(id);
+        page.setTotalRows(count);
+        System.out.println(count);
+        List<NewsLabel> labels = newsLabelDao.findNewsLabel(page,id);
+        page.setDatas(labels);
+        List<NewsLabel> data = page.getDatas();
+        for (int i = 0;i < data.size(); i++){
+            System.out.println(data.get(i));
+        }
+        return page;
+    }
 }

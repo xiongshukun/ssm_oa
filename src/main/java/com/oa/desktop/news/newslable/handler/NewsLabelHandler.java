@@ -21,14 +21,26 @@ public class NewsLabelHandler {
 
     @RequestMapping("/queryNewsLabel")
     public String queryNewsLable(@RequestParam(defaultValue = "1") int pagenum, Model model){
-
         List<NewsLabel> parent = newsLabelService.findAllParent();
-
         Page<NewsLabel> page = newsLabelService.findCurrentPage(pagenum);
-
         model.addAttribute("page",page);
         model.addAttribute("parent",parent);
         return "/html/news/newsLabelManger.jsp";
+    }
+
+    @RequestMapping("/find")
+    public String find(int id,@RequestParam(defaultValue = "1") int pagenum, Model model){
+        List<NewsLabel> parent = newsLabelService.findAllParent();
+        Page<NewsLabel> page = newsLabelService.selectAllCurrentPage(id,pagenum);
+        model.addAttribute("pid",id);
+        model.addAttribute("page",page);
+        model.addAttribute("parent",parent);
+        System.out.println(page.getPageStartIndex());
+        List<NewsLabel> data = page.getDatas();
+        for (int i = 0;i < data.size(); i++){
+            System.out.println(data.get(i));
+        }
+        return "/html/news/newslabel.jsp";
     }
    
     @RequestMapping("/deleteNewsLabel")
