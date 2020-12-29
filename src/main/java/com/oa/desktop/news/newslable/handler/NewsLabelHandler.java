@@ -37,14 +37,15 @@ public class NewsLabelHandler {
         return "/desktop/news/queryNewsLabel";
     }
 
-    @RequestMapping("newsLabelUpdate")
+    @RequestMapping("/newsLabelUpdate")
     public ModelAndView newsLabelUpdate(Integer id){
         ModelAndView mv = new ModelAndView();
-        NewsLabel newsLabel = newsLabelService.FindUpdate(id);
-        mv.addObject("newsLabel",newsLabel);
-        mv.setViewName("/html/news/newsLabelUpdate.jsp");
-        List<NewsLabel> newsLabelList = newsLabelService.FindAll();
-        mv.addObject("newsLabelList",newsLabelList);
+        NewsLabel ccc = newsLabelService.FindUpdate(id);
+        System.out.println(ccc.getId());
+        mv.addObject("ccc",ccc);
+        mv.setViewName("/html/news/Update.jsp");
+        List<NewsLabel> ddd = newsLabelService.FindAll();
+        mv.addObject("ddd",ddd);
         return mv;
     }
 
@@ -58,9 +59,9 @@ public class NewsLabelHandler {
     @RequestMapping("/newsLabelInsert")
     public ModelAndView newsLabelInsert(){
         ModelAndView modelAndView = new ModelAndView();
-        List<NewsLabel> newsLabelList = newsLabelService.FindAll();
-        modelAndView.addObject("newsLabelList",newsLabelList);
-        modelAndView.setViewName("/html/news/newsLabelInsert.jsp");
+        List<NewsLabel> aaa = newsLabelService.FindAll();
+        modelAndView.addObject("aaa",aaa);
+        modelAndView.setViewName("/html/news/Insert.jsp");
 
         return modelAndView;
     }

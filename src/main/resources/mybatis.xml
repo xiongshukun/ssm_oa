@@ -10,7 +10,7 @@
 
     <!--注册映射文件-->
     <mappers>
-        <package name="com.oa.**.dao"/>
+        <package name="com.oa.desktop.news.newslable.dao"/>
     </mappers>
     
 </configuration>

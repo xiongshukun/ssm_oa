@@ -40,6 +40,7 @@ public class NewsLabelServiceImpl implements INewsLabelService{
     @Override
     public void updateNewsLabel(NewsLabel newsLabel) {
         newsLabelDao.updateNewsLabel(newsLabel);
+        System.out.println(newsLabel.getId());
     }
 
     @Override
@@ -54,6 +55,6 @@ public class NewsLabelServiceImpl implements INewsLabelService{
 
     @Override
     public NewsLabel FindUpdate(Integer id) {
-        return newsLabelDao.FindUpdate();
+        return newsLabelDao.FindUpdate(id);
     }
 }

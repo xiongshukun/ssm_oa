@@ -60,16 +60,6 @@
                     </select>
                 </td>
             </tr>
-            <!--  <tr>
-               <td class="td_02">二级栏目名称</td>
-               <td class="td_02">
-                 <select name="select" class="input" style="width:99% ">
-                   <option value="1" selected>--请选择--</option>
-                   <option value="2">天下足球</option>
-                   <option value="3">我猜</option>
-                 </select>
-               </td>
-             </tr> -->
         </table>
         <br>
         <table width="95%"  border="0" align="center" cellpadding="0" cellspacing="0">

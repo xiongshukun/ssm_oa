@@ -20,5 +20,5 @@ public interface INewsLabelDao {
 
     List<NewsLabel> FindAll();
 
-    NewsLabel FindUpdate();
+    NewsLabel FindUpdate(int id);
 }
