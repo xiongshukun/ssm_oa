@@ -73,4 +73,9 @@ public class NewsLabelServiceImpl implements INewsLabelService{
         }
         return page;
     }
+
+    @Override
+    public List<NewsLabel> findAllNewsLabel() {
+        return newsLabelDao.findAllNewsLabel();
+    }
 }

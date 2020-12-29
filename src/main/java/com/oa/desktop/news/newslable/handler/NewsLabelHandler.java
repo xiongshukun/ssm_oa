@@ -1,5 +1,4 @@
 package com.oa.desktop.news.newslable.handler;
-
 import com.oa.commons.beans.NewsLabel;
 import com.oa.commons.valueobject.Page;
 import com.oa.desktop.news.newslable.service.INewsLabelService;
@@ -11,17 +10,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
-
 @Controller
 @RequestMapping("/desktop/news")
 public class NewsLabelHandler {
-
     @Autowired
     private INewsLabelService newsLabelService;
 
     @RequestMapping("/queryNewsLabel")
     public String queryNewsLable(@RequestParam(defaultValue = "1") int pagenum, Model model){
-        List<NewsLabel> parent = newsLabelService.findAllParent();
+        List<NewsLabel> parent = newsLabelService.findAllNewsLabel();
         Page<NewsLabel> page = newsLabelService.findCurrentPage(pagenum);
         model.addAttribute("page",page);
         model.addAttribute("parent",parent);

@@ -28,4 +28,6 @@ public interface INewsLabelDao {
     int findCount(int id);
 
     List<NewsLabel> findNewsLabel(@Param("page") Page<NewsLabel> page, @Param("id") int id);
+
+    List<NewsLabel> findAllNewsLabel();
 }

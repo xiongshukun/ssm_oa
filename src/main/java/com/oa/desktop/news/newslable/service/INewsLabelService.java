@@ -21,4 +21,6 @@ public interface INewsLabelService {
     NewsLabel FindUpdate(Integer id);
 
     Page<NewsLabel> selectAllCurrentPage(int id, int pagenum);
+
+    List<NewsLabel> findAllNewsLabel();
 }

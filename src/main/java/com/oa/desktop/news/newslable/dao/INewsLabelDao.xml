@@ -68,4 +68,8 @@
         select id,label_name,label_content,pid from newlabel where id = #{id}
     </select>
 
+    <select id="findAllNewsLabel" resultType="NewsLabel">
+        select id,label_name,label_content,pid from newlabel
+    </select>
+
 </mapper>
